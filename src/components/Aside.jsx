@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/Aside.css';
+import AsideTabButton from './AsideTabButton';
 
 function Aside() {
   const [tabs, setTabs] = useState([
@@ -42,6 +43,19 @@ function Aside() {
   return (
     <div className='aside'>
       <h1>{currentTab.title}</h1>
+      <div className='tab-buttons'>
+        {tabs.map((tab) => {
+          return (
+            <AsideTabButton
+              key={tab.id}
+              innerHTML={tab.title}
+              onClick={() => {
+                setCurrentTabId(tab.id);
+              }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

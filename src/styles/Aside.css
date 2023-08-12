@@ -14,3 +14,31 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.tab-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.aside-tab-button {
+  display: flex;
+  height: 40px;
+  padding: 5px;
+  border-right: 1px;
+  border-bottom: 1px;
+  border-top: 1px;
+  border-color: black;
+  border-style: solid;
+  justify-content: center;
+  align-items: center;
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+
+.aside-tab-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.aside-tab-button:last-of-type {
+  border-right: 0px;
+}
