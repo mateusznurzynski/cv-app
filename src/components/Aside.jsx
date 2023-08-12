@@ -1,37 +1,39 @@
 import { useState } from 'react';
+import { useImmer } from 'use-immer';
 import '../styles/Aside.css';
 import AsideTabButton from './AsideTabButton';
+import Form from './Form';
 
 function Aside() {
-  const [tabs, setTabs] = useState([
+  const [tabs, setTabs] = useImmer([
     {
       title: 'Basic Information',
       id: 'basic',
-      fieldSet: {
-        name: '',
-        email: '',
-        phoneNumber: '',
-      },
+      fieldSet: [
+        { value: '', label: 'Your full name', id: 'fullName' },
+        { value: '', label: 'E-mail address', id: 'email' },
+        { value: '', label: 'Phone number', id: 'phone' },
+      ],
     },
     {
       title: 'Education',
       id: 'education',
-      fieldSet: {
-        schoolName: '',
-        studyTitle: '',
-        studyDate: '',
-      },
+      fieldSet: [
+        { value: '', label: 'School name', id: 'schoolName' },
+        { value: '', label: 'Study', id: 'studyName' },
+        { value: '', label: 'Date', id: 'studyDate' },
+      ],
     },
     {
       title: 'Practical experience',
       id: 'experience',
-      fieldSet: {
-        companyName: '',
-        positionTitle: '',
-        responsibilities: '',
-        startDate: '',
-        endDate: '',
-      },
+      fieldSet: [
+        { value: '', label: 'Company name', id: 'companyName' },
+        { value: '', label: 'Position/Title', id: 'positionTitle' },
+        { value: '', label: 'Responsibilities', id: 'responsibilities' },
+        { value: '', label: 'Start date', id: 'startDate' },
+        { value: '', label: 'End date', id: 'endDate' },
+      ],
     },
   ]);
   const [currentTabId, setCurrentTabId] = useState('basic');
@@ -39,6 +41,16 @@ function Aside() {
   const currentTab = tabs.find((tab) => {
     return tab.id === currentTabId;
   });
+
+  const currentTabIndex = tabs.findIndex((tab) => {
+    return tab.id === currentTabId;
+  });
+
+  const editField = (newValue, fieldIndex) => {
+    setTabs((tabs) => {
+      tabs[currentTabIndex].fieldSet[fieldIndex].value = newValue;
+    });
+  };
 
   return (
     <div className='aside'>
@@ -56,6 +68,12 @@ function Aside() {
           );
         })}
       </div>
+      <Form
+        tab={currentTab}
+        onChange={(e) => {
+          editField(e.target.value, e.target.getAttribute('data-index'));
+        }}
+      />
     </div>
   );
 }
