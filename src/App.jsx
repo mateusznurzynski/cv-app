@@ -1,7 +1,12 @@
 import './App.css';
+import Aside from './components/Aside';
 
 function App() {
-  return <></>;
+  return (
+    <div className='container'>
+      <Aside />
+    </div>
+  );
 }
 
 export default App;
