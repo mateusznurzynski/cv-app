@@ -19,6 +19,7 @@ function Aside({ tabs, onFieldEdit, currentTabId, setCurrentTabId }) {
               onClick={() => {
                 setCurrentTabId(tab.id);
               }}
+              active={tab.id === currentTab.id}
             />
           );
         })}

@@ -42,3 +42,7 @@
 .aside-tab-button:last-of-type {
   border-right: 0px;
 }
+
+.aside-tab-button.active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
