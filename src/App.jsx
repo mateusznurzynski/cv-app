@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { useImmer } from 'use-immer';
 import './App.css';
 import Aside from './components/Aside';
+import Display from './components/Display';
 
 function App() {
   const [tabs, setTabs] = useImmer([
     {
       title: 'Basic Information',
+      resultHeader: 'About me',
       id: 'basic',
       fieldSet: [
         { value: '', label: 'Your full name', id: 'fullName' },
@@ -16,6 +18,7 @@ function App() {
     },
     {
       title: 'Education',
+      resultHeader: 'Education',
       id: 'education',
       fieldSet: [
         { value: '', label: 'School name', id: 'schoolName' },
@@ -25,6 +28,7 @@ function App() {
     },
     {
       title: 'Practical experience',
+      resultHeader: 'Experience',
       id: 'experience',
       fieldSet: [
         { value: '', label: 'Company name', id: 'companyName' },
@@ -54,6 +58,7 @@ function App() {
         currentTabId={currentTabId}
         setCurrentTabId={setCurrentTabId}
       />
+      <Display tabs={tabs} />
     </div>
   );
 }

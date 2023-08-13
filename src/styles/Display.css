@@ -1,0 +1,42 @@
+.display-container {
+  --display-padding: 30px;
+  --curriculum-padding: 10px;
+  --curriculum-width: 420px;
+  --curriculum-height: 594px;
+  width: 100%;
+  max-height: calc(100svh - var(--display-padding) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--display-padding);
+  background-color: gray;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.curriculum {
+  padding: var(--curriculum-padding);
+  width: var(--curriculum-width);
+  height: var(--curriculum-height);
+  background-color: white;
+}
+
+.curriculum section {
+  margin-bottom: 20px;
+}
+
+.curriculum h1 {
+  font-size: 1.2rem;
+}
+
+.curriculum hr {
+  border: 1px rgba(0, 0, 0, 0.7) solid;
+  width: 100%;
+}
+
+.basic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
