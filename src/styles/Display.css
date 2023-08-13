@@ -56,3 +56,7 @@
   word-wrap: normal;
   max-width: unset;
 }
+
+.basic .info-container {
+  justify-content: flex-end;
+}
