@@ -11,9 +11,9 @@ function App() {
       resultHeader: '',
       id: 'basic',
       fieldSet: [
-        { value: '', label: 'Your full name', id: 'fullName' },
-        { value: '', label: 'E-mail address', id: 'email' },
-        { value: '', label: 'Phone number', id: 'phone' },
+        { value: '', label: 'Your full name', id: 'fullName', type: 'text' },
+        { value: '', label: 'E-mail address', id: 'email', type: 'email' },
+        { value: '', label: 'Phone number', id: 'phone', type: 'tel' },
       ],
     },
     {
@@ -21,9 +21,9 @@ function App() {
       resultHeader: 'Education',
       id: 'education',
       fieldSet: [
-        { value: '', label: 'School name', id: 'schoolName' },
-        { value: '', label: 'Study name', id: 'studyName' },
-        { value: '', label: 'Study End Date', id: 'studyDate' },
+        { value: '', label: 'School name', id: 'schoolName', type: 'text' },
+        { value: '', label: 'Study name', id: 'studyName', type: 'text' },
+        { value: '', label: 'Study End Date', id: 'studyDate', type: 'date' },
       ],
     },
     {
@@ -31,11 +31,21 @@ function App() {
       resultHeader: 'Experience',
       id: 'experience',
       fieldSet: [
-        { value: '', label: 'Company name', id: 'companyName' },
-        { value: '', label: 'Position/Title', id: 'positionTitle' },
-        { value: '', label: 'Responsibilities', id: 'responsibilities' },
-        { value: '', label: 'Start date', id: 'startDate' },
-        { value: '', label: 'End date', id: 'endDate' },
+        { value: '', label: 'Company name', id: 'companyName', type: 'text' },
+        {
+          value: '',
+          label: 'Position/Title',
+          id: 'positionTitle',
+          type: 'text',
+        },
+        {
+          value: '',
+          label: 'Responsibilities',
+          id: 'responsibilities',
+          type: 'text',
+        },
+        { value: '', label: 'Start date', id: 'startDate', type: 'date' },
+        { value: '', label: 'End date', id: 'endDate', type: 'date' },
       ],
     },
   ]);

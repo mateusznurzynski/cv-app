@@ -3,7 +3,7 @@ function Input({ field, onChange, index }) {
     <label className='input-label'>
       <h2>{field.label}:</h2>
       <input
-        type='text'
+        type={field.type || 'text'}
         name={field.id}
         id={field.id}
         className='input-field'
