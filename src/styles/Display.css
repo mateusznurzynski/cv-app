@@ -34,9 +34,25 @@
   width: 100%;
 }
 
+.info-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-value {
+  max-width: 250px;
+  word-wrap: break-word;
+}
+
 .basic {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+}
+
+.basic .info-value {
+  word-wrap: normal;
+  max-width: unset;
 }

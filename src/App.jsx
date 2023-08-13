@@ -8,7 +8,7 @@ function App() {
   const [tabs, setTabs] = useImmer([
     {
       title: 'Basic Information',
-      resultHeader: 'About me',
+      resultHeader: '',
       id: 'basic',
       fieldSet: [
         { value: '', label: 'Your full name', id: 'fullName' },
@@ -22,8 +22,8 @@ function App() {
       id: 'education',
       fieldSet: [
         { value: '', label: 'School name', id: 'schoolName' },
-        { value: '', label: 'Study', id: 'studyName' },
-        { value: '', label: 'Date', id: 'studyDate' },
+        { value: '', label: 'Study name', id: 'studyName' },
+        { value: '', label: 'Study End Date', id: 'studyDate' },
       ],
     },
     {

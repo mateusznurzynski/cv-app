@@ -5,9 +5,12 @@ function Section({ tab }) {
       {tab.id !== 'basic' ? <hr /> : null}
       {tab.fieldSet.map((field) => {
         return (
-          <p key={field.id} className={field.id}>
-            {field.value}
-          </p>
+          <div key={field.id} className='info-container'>
+            {tab.id !== 'basic' ? (
+              <p className='info-title'>{field.label}:</p>
+            ) : null}
+            <p className='info-value'>{field.value}</p>
+          </div>
         );
       })}
     </section>
